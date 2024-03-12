@@ -1,0 +1,38 @@
+
+{% extends 'base.html' %}
+
+ {% block content %}
+ 
+ <br>
+ <br>
+ <div class="container">
+
+    <h1 class="text-center">Formulario de contacto en caso de necesitarlo.</h1>
+    <br>
+    <br>
+    <div class="row">
+            
+        <div class="col-2"></div>
+        <div class="col-8 contenedor2">
+
+            <form action="{% url 'guardado3' %}" method="post">
+                {% csrf_token %}
+                
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Dirección de email:</label>
+                    <input required name="email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="correo@correo.com">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Mensaje.</label>
+                    <textarea required name="mensaje" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <input class="btn btn-dark" type="submit" value="Enviar" name="" id="">
+                
+            </form>
+        </div>
+        <div class="col-2"></div>
+
+    </div>
+ </div>
+
+{% endblock %}

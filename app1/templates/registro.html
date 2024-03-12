@@ -1,0 +1,49 @@
+
+{% extends 'base.html' %}
+
+ {% block content %}
+
+ <br>
+ <br>
+ <h2 class="text-center">
+    Formulario para crear cuenta.
+ </h2>
+ <br>
+ <br>
+
+<div class="container">
+    <div class="row">
+                
+        <div class="col-2"></div>
+        <div class="col-8 contenedor2">
+            
+            <form action="{% url 'guardado' %}" method="post">
+                {% csrf_token %}
+                    
+                <label for="nomID" class="form-label">Ingrese Nombre:</label>
+                <input required type="text" name="InNom" class="form-control" id="nomID" placeholder="Bastian">
+                
+                <br><br>
+                <label for="apeID" class="form-label">Ingrese Apellido:</label>
+                <input required type="text" name="InApe" class="form-control" id="apeID" placeholder="Urrutia">
+                
+                <br><br>
+                <label for="corID" class="form-label">Ingrese Correo Electronico:</label>
+                <input required type="email" name="InCorr" class="form-control" id="corID" placeholder="correo@correo.com">
+                
+                <br><br>
+                <label for="conID" class="form-label">Ingrese Contraseña:</label>
+                <input required type="password" name="InCon" class="form-control" id="conID" placeholder="correo@correo.com">
+                
+                <br><br>
+                <button class="btn btn-dark" type="submit" id="regID">Registrarse</button>
+
+            </form>
+
+        </div>
+        <div class="col-2"></div>
+
+    </div>
+</div>
+
+{% endblock %}

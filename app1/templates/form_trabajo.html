@@ -1,0 +1,111 @@
+
+{% extends 'base.html' %} 
+
+{% block title %}
+Subir Trabajo
+{%endblock%}
+{% block content %}
+
+<br>
+<br>
+
+<h3 class="text-center">
+    Formulario para subir una publicación.
+</h3>
+
+<br>
+<br>
+            
+<div class="container">
+    <div class="row">
+            
+        <div class="col-2"></div>
+        <div class="col-8">
+                    
+            
+            <form enctype="multipart/form-data" class="contenedor2" action="{% url 'guardado2' %}" method="post">
+                {% csrf_token %}
+
+                <label for="">Título del trabajo:</label>
+                <input required type="text" name="titulo">
+                <br>
+                <br>
+                <label for="">Fecha:</label>
+                <input required type="date" name="fecha" id="">
+                <br>
+                <br>
+                <label for="">Descripción:</label>
+                <br>
+                <textarea name="desc" id="" cols="60" rows="5"></textarea>
+                <br>
+                <br>
+                <label for="">Seleccione Categoría:</label>
+                <br>
+                <select name="categoria" id="">
+                    {% for i in cate %}
+                        <option value="{{i.id}}">{{i.nombre}}</option>
+                    {% endfor %}
+                </select>
+
+                <br>
+                <br>
+                <label for="">Seleccione Diagnóstico:</label>
+                <br>
+                <select name="diagnostico" id="">
+                    {% for i in diag %}
+                        <option value="{{i.id}}">{{i.nombre}}</option>
+                    {% endfor %}
+                </select>
+                <br>
+                <br>
+                <!-- <label for="">Seleccione los Materiales Utilizados:</label>
+                <br> -->
+
+
+                <div class="row text-center">
+                    <div class="col-6">
+                      <label for="">Escoger material(es)</label>
+                      <!--  -->
+                      <!--  -->
+                <select class="w-100 form-select" size="6" multiple name="materiales" id="mate1ID">
+                    {% for i in mate %}
+                        <option value="{{i.id}}">{{i.nombre}}</option>
+                    {% endfor %}
+                </select>
+
+                    </div>
+                    <div class="col-6 text-center">
+                      <label for="">Lista de materiales:</label>
+              
+                      <select size="6" class="w-100 form-select" id="mate2ID">
+
+                      </select>
+              
+                      <textarea
+                        name="listaMateriales"
+                        hidden
+                        id="ocultoID"
+                      ></textarea>
+                    </div>
+              
+                  </div>
+              
+              
+
+                  <br>
+                <label for="">Subir una foto:</label>
+                <br>
+                <input type="file" name="foto" id="">
+
+                <br>
+                <br>
+
+                <input type="submit" id="enviarID" value="Enviar Trabajo">
+            </form>
+        </div>
+        <div class="col-2"></div>
+    </div>
+</div>
+
+
+{% endblock %}

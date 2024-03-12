@@ -1,0 +1,56 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10 contenedor2">
+            
+            <h1 class="text-center">
+                Título: {{data.titulo}}
+            </h1>
+
+            <br>
+            
+            <br>
+            <p class="margen"><b>Diagóstico del problema:</b> {{diag}}</p>
+            <p class="margen"><b>Descipción:</b> {{data.descripcion}}</p>
+            <p class="margen"><b>Fecha del trabajo realizado:</b> {{data.fecha}}</p>
+            <p class="margen"><b>Categoría:</b> {{data.id_categoria}}</p>
+            <p class="margen"><b>Mecánico:</b> {{data.first_name}} {{data.last_name}}</p>
+
+            <p class="margen">
+                <b>Materiales utilizados:</b>
+            </p>
+
+            <ul class="margen">
+                {% for i in mate %}
+                    <li>{{i.id_material}}</li>
+                {% endfor %}
+            </ul>
+            
+            <br>
+            <h3 class="text-center">Galería de imágenes:</h3>
+            <br>
+
+            <div class="text-center">
+
+                <img src="../static/media/{{data.nombre_foto}}" alt="">
+
+            </div>
+
+        </div>
+        <div class="col-1"></div>
+    </div>
+</div>
+
+
+
+{% endblock %}

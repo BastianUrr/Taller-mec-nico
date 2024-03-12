@@ -1,0 +1,62 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+
+<br>
+<br>
+<div class="text-center container contenedor2">
+
+    <h3>
+        Lista de todos los trabajos del mecánico {{meca2.first_name}}
+    </h3>
+    
+</div>
+<br>
+<br>
+
+<div>
+        
+    <hr>
+
+    <br>
+    <br>
+
+    <div  class="container contenedor2">
+        <table class="table">
+            <tr>
+                
+                <th>Título del Trabajo</th>
+                <th>Fecha del Trabajo</th>
+                <th>Enlace</th>
+
+            </tr>
+
+            {% for i in data %}
+            
+                <tr>
+                    <td>{{i.titulo}}</td>
+                    <td>{{i.fecha}}</td>
+                    <td>
+                        <a href="{% url 'trabajo' pk=i.id %}">Ver detalles</a>
+                    </td>
+                </tr>
+
+            {% endfor %}
+    
+        </table>
+
+        <br>
+        <p>Total de mantenciones: {{total}}</p>
+
+    </div>
+
+</div>
+
+
+
+
+{% endblock %}

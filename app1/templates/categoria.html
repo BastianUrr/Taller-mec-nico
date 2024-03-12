@@ -1,0 +1,55 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<br>
+<br>
+<div class="text-center container contenedor2">
+
+    <h3>
+        Lista de todos los trabajos en la categoría de {{cate}}
+    </h3>
+    
+</div>
+<br>
+<br>
+
+<div>
+        
+    <hr>
+
+    <br>
+    <br>
+
+    <div  class="container contenedor2">
+        <table class="table">
+            <tr>
+                
+                <th>Título del Trabajo</th>
+                <th>Mecánico</th>
+                <th>Fecha del Trabajo</th>
+                <th>Enlace</th>
+
+            </tr>
+
+            {% for i in data %}
+            
+                <tr>
+                    <td>{{i.titulo}}</td>
+                    <td>{{i.first_name}}</td>
+                    <td>{{i.fecha}}</td>
+                    <td>
+                        <a href="{% url 'trabajo' pk=i.id %}">Ver detalles</a>
+                    </td>
+                </tr>
+
+            {% endfor %}
+    
+        </table>
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+
+.fondo{
+    background-image: url("../static/img-vid/logo-taller.jpg");
+    background-repeat: no-repeat;
+    background-position: center ;
+    /* background-size: cover; */
+}
+
+
+
+.login{
+    color: rgb(252, 248, 11);
+    color: yellow;
+    font-weight: bold;
+}
+
+.mapa{
+    /* width: 370px; */
+    object-fit: contain;
+    width: 100%;
+
+}
+
+.contenedor2{
+    border: 3px gray solid;
+    padding: 40px;
+    border-radius: 25px;
+    background-color: rgb(239, 237, 240, 0.92);
+}
+
+.contenedor3{
+    border: 1px gray solid;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: rgb(254, 251, 255, 0.65);
+    /* , 0.85 */
+}
+
+.margen{
+    margin-left: 10%;
+}

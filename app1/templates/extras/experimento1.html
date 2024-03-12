@@ -1,0 +1,27 @@
+
+
+
+{% extends 'base.html' %}
+
+ {% block content %}
+
+ <form action="{% url 'guardado3' %}" method="post">
+    {% csrf_token %}
+    <br>
+    <br>
+
+    {{ form.as_p }}
+
+    <select multiple name="select" id="">
+
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+
+    </select>
+
+    <input type="submit" value="Exp1" name="" id="">
+ </form>
+
+{% endblock %}
+
